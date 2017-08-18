@@ -1,3 +1,7 @@
+
+fork版本
+
+
 ## RefreshFlatList
 
 [![npm](https://img.shields.io/npm/v/react-native-refreshflatlist.svg)](https://www.npmjs.com/package/react-native-refreshflatlist)
