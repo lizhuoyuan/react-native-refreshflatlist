@@ -249,7 +249,7 @@ export default class HeaderFlatList extends React.Component {
 
     onEnd(e, g) {
         this.isOnMove = false;
-        if (this.props.contentOffsetY < -this.headerHeight) {
+        if (this.props.contentOffsetY < this.headerHeight) {
             const {onRefreshFun} = this.props;
             onRefreshFun ? onRefreshFun() : this._onRefreshFun()
         }
