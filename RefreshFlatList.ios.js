@@ -1,5 +1,5 @@
 /**
- * Created by jiajiewang on 2017/6/27.
+ * Created by lizhuoyuan on 2017/6/27.
  */
 import React, {PropTypes}  from 'react';
 import {
