@@ -1,5 +1,5 @@
 /**
- * Created by lizhuoyuan on 2017/6/27.
+ * Created by jiajiewang on 2017/6/27.
  */
 import React, {PropTypes}  from 'react';
 import {
@@ -151,7 +151,9 @@ export default class HeaderFlatList extends React.Component {
                 this.beforeRefreshState = RefreshState.pullToRefresh;
                 this.updateRefreshViewState(RefreshState.refreshdown)
             } else {
-                this.updateRefreshViewState(RefreshState.pullToRefresh)
+
+                //修复切换状态
+               // this.updateRefreshViewState(RefreshState.pullToRefresh)
             }
         }
     }
@@ -202,7 +204,7 @@ export default class HeaderFlatList extends React.Component {
         this.props.onScroll && this.props.onScroll(e);
         let {y} = e.nativeEvent.contentOffset;
         this._scrollEndY = y
-        console.log(y)
+        //console.log(y)
         if (!this.isOnMove && -y >= 0) {
             //刷新状态下，上推列表依percent然显示100%
             let p = parseInt(( -y / (this.headerHeight)) * 100);
@@ -249,7 +251,7 @@ export default class HeaderFlatList extends React.Component {
 
     onEnd(e, g) {
         this.isOnMove = false;
-        if (this.props.contentOffsetY < -this.headerHeight) {
+        if (this.props.contentOffsetY < -this.headerHeight * 0.6) {
             const {onRefreshFun} = this.props;
             onRefreshFun ? onRefreshFun() : this._onRefreshFun()
         }
